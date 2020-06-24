@@ -1,0 +1,11 @@
+.message{
+    display: grid;
+    justify-self: center;
+    min-height: 100%;
+    justify-items: center;
+    align-items: center;
+}
+
+h1{
+    color: #bed33f;
+}

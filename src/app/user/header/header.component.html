@@ -1,0 +1,72 @@
+<nav>
+    <ul class="header-ul header-links">
+        <li class="header-link">
+            <img src="/assets/GreenAtom_logo.png" width="50" height="50" alt="logo" routerLink="/events">
+        </li>
+        <li class="header-link">
+            <a routerLink="/events" class="header-link link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Наши события</a>
+        </li>
+        <li class="header-link">
+            <a routerLink="/gifts" class="header-link link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Подарки</a>
+        </li>
+        <li class="header-link">
+            <a routerLink="/history" class="header-link link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">История транзакции</a>
+        </li>
+        <li class="header-link">
+            <a routerLink="/congratulate" class="header-link link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Поздравить с 8 марта</a>
+        </li>
+        <li class="header-link">
+            <a routerLink="/raise" class="header-link link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Повысить боевой дух</a>
+        </li>
+    </ul>
+    <div *ngIf="!isAuth" class="header-profile profile-link">
+        <span class="login" data-toggle="modal" data-target=".login-modal">Войти</span> 
+    </div>
+    <div *ngIf="isAuth" class="header-profile profile-link">
+        <a class="profile-name link" routerLink="/profile">{{ user_data.name }} {{ user_data.surname }}</a>
+        <span class="profile-balance">Ваш баланс:  <span class="bold">{{ user_data.bonuses }}f</span> </span>
+        <span class="profile-img">
+            <img src="/assets/profile_photo.png" width="50" height="50" alt="photo profile" routerLink="/profile" >
+        </span>
+    </div>
+</nav>
+
+<div *ngIf="!isAuth">
+    <div class="modal fade login-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xmd">
+          <div class="modal-content">
+      
+            <!-- Компонент "вход" -->
+            <app-login></app-login>
+            <!-- . -->
+      
+          </div>
+        </div>
+      </div>
+
+      <div class="modal fade sign-up-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xmd">
+          <div class="modal-content">
+      
+            <!-- Компонент "вход" -->
+            <app-sign-up></app-sign-up>
+            <!-- . -->
+      
+          </div>
+        </div>
+      </div>
+
+      
+      <div class="modal fade forgot-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xmd">
+          <div class="modal-content">
+      
+            <!-- Компонент "вход" -->
+            <!-- <app-sign-up></app-sign-up> -->
+            <!-- . -->
+      
+          </div>
+        </div>
+      </div>
+</div>
+

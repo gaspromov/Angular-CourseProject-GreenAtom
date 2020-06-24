@@ -1,1 +1,91 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+html{
+    margin: 0px;
+    height: 100%;
+}
+    
+@font-face {
+    font-family: 'fontello';
+    src: url('/assets/fontello.eot?37344668');
+    src: url('/assets/fontello.eot?37344668#iefix') format('embedded-opentype'),
+         url('/assets/fontello.woff?37344668') format('woff'),
+         url('/assets/fontello.ttf?37344668') format('truetype'),
+         url('/assets/fontello.svg?37344668#fontello') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+
+@media (min-width: 1300px){
+    html{
+    padding: 0px 200px;
+    }
+}
+
+@media (max-width: 1350px) and (min-width: 1150px){
+    html{
+        padding: 0px 100px;
+    }
+}
+
+@media (max-width: 1150px) and (min-width: 1000px){
+    html{
+        padding: 0px 50px;
+    }
+}
+
+@media (max-width: 999px){
+    html{
+        padding: 0px 10px;
+    }
+}
+
+body{
+    /* font-family: 'Roboto', sans-serif; */
+    height: 100%;
+}
+
+*:active, *:focus{
+    outline: none;
+}
+
+
+app-root{
+    min-height: 100%;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    grid-row-gap: 30px;
+}
+
+app-gifts{
+    display: grid;
+    grid-row-gap: 20px;
+}
+
+app-events{
+    display: grid;
+    grid-row-gap: 20px;
+}
+
+.icon{
+    font-family: "fontello";
+    font-style: normal;
+    font-weight: normal;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+.rating{
+    color: #9DC68C;
+}
+
+.price{
+    color: #73AD28;
+    font-weight: 500;
+    
+}
+

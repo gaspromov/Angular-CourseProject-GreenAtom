@@ -1,0 +1,28 @@
+    <h4 class="text-center">Профиль</h4>
+    <div class="content mt-4">
+        <div class="card">
+                <div class="alert alert-success" *ngIf="confirm"> Ваши данные успешно изменены!</div>
+                <div class="head">
+                <img src="/assets/profile_photo.png" alt="photo profile" >
+                <span> 
+                    <span class="name font-weight-bold">{{ user_data.name }} {{ user_data.surname }}</span> <br>
+                    <span class="profession">{{ user_data.profession }}</span>
+                </span> 
+                <span class="bonuses">Бонусы: <span class="price font-weight-bold">{{ user_data.bonuses}}f</span></span>
+                <input type="text" class="form-control mb-2" [value]="user_data.email" disabled>
+                <input type="text" class="form-control" [value]="8+user_data.phone" disabled>
+            </div>
+            <div class="about">
+                О себе: 
+                <textarea class="form-control" name="about" id="about" cols="50" rows="4" [(ngModel)]="about"></textarea>
+
+            </div>
+            <div class="buttons">
+                <button class="btn btn-sm btn-outline-success mr-2" (click)="onSave()">Сохранить</button>
+                <button class="btn btn-sm btn-outline-danger" (click)="logout()">Выйти</button>
+
+            </div>
+
+        </div>
+
+    </div>

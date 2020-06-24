@@ -7,4 +7,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'GreenAtom';
+  isAuth: boolean;
+
+  ngOnInit(){
+    if (JSON.parse(localStorage.getItem('user')) && JSON.parse(localStorage.getItem('user')).emailVerified ){
+      this.isAuth = true;
+    }else{
+      this.isAuth = false;
+    }
+  }
 }

@@ -1,0 +1,8 @@
+.content{
+    display: grid;
+    grid-row-gap: 20px;
+}
+
+.content img{
+    justify-self: center;
+}

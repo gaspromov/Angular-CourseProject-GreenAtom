@@ -1,0 +1,30 @@
+.content{
+    display: grid;
+    justify-items: center;
+}
+
+.card{
+    padding: 40px;
+    box-shadow: 0 0 10px black;
+    border: none;
+    display: grid;
+    grid-row-gap: 20px;
+}
+
+.card .head{
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-column-gap: 20px;
+}
+
+.card .head img{
+    grid-row: 1/6;
+    justify-self: center;
+    height: 100%;
+}
+
+.buttons{
+    display: flex;
+    justify-content: flex-end;
+}
+

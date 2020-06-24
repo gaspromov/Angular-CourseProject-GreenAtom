@@ -1,0 +1,42 @@
+<button type="button" class="close pr-1" data-dismiss="modal" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+  <!-- . -->
+<div class="p-4">
+  <!-- Заголовок -->
+  <h4 class="h4 text-center">Вход</h4>
+
+    <form class="authBlock" (submit)="login(email, password)">
+
+        <!-- Форма -->
+        <label for="email-sign" class="m-0">Email адрес</label>
+        <input type="email" class="form-control mb-2" id="email-sign" aria-describedby="emailHelp" placeholder="Введите email..." [(ngModel)]="email" name="email">
+    
+        <label for="pass-sign" class="m-0">Пароль</label>
+        <input type="password" class="form-control mb-2" id="pass-sign" placeholder="Введите пароль..." [(ngModel)]="password" name="pass">
+        <!-- . -->
+   
+        <!-- Открытие модального окна "забыли пароль" -->
+        <div class="forgotPassword">
+          <a routerLink='' class="redirect"  data-dismiss="modal" aria-label="Close"  data-toggle="modal" data-target=".forgot-modal">
+            Забыл пароль
+          </a>
+        </div>
+        <!-- . -->
+
+        <!-- ОТкрытие модального окна зарегитсрироваться -->
+        <div class="redirectToLogin">
+          <a routerLink=''  class="redirect" data-dismiss="modal" aria-label="Close"  data-toggle="modal" data-target=".sign-up-modal">
+            Зарегистрироваться
+          </a>
+        </div>
+        <!-- . -->
+
+        <!-- Отправка формы -->
+        <div class="d-flex justify-content-center">
+            <button type="submit" class="btn btn-outline-success">Войти</button>
+        </div>
+        <!-- . -->
+
+</form>
+</div>

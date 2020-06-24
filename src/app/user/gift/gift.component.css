@@ -1,0 +1,41 @@
+.content{
+    display: grid;
+    grid-template-columns: 60% 40%;
+    grid-column-gap: 20px;
+}
+
+.content img{
+    width: 100%;
+}
+
+.content .about{
+    /* display: grid; */
+}
+
+.content .about ul{
+    list-style: none;
+}
+
+.likes{
+    padding: 0px;
+    margin: 0px;
+}
+
+.buy{
+    color: white;
+    background-color: #9DC68C;
+    padding: 7px 15px;
+    border: none;
+    justify-self: start;
+    align-self: center;
+    cursor: pointer;
+}
+
+.buy:hover{
+    background-color: #4e723f;
+}
+
+.price{
+    font-size: 20px;
+    font-weight: bold;
+}

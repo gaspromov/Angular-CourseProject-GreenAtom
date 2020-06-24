@@ -1,0 +1,70 @@
+.top{
+    display: grid;
+    justify-items: start;
+    align-items: center;
+}
+
+.top h6{
+    display: grid;
+    justify-items: start;
+    align-items: bottom;
+    margin: 0px;
+    margin-top: 8px;
+}
+
+.events{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 30px;
+    grid-template-rows: repeat(2, 1fr);
+    grid-row-gap: 25px;
+}
+
+.events .event img{
+    width: 100%;
+}
+
+
+.events div .event-info{
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.events div .event-info span:first-child{
+    justify-self: start;
+}
+
+.events div .event-info span:last-child{
+    justify-self: end;
+}
+
+.pages{
+    justify-self: center;
+    align-self: center;
+}
+
+.event-name{
+    font-weight: 500;
+}
+
+.date{
+    color: #666666;
+}
+
+.pages .icon{
+    cursor: pointer; 
+ }
+ 
+
+.pages .icon{
+    cursor: pointer; 
+ }
+ 
+ .pages .active{
+     font-size: 20px;
+ }
+ 
+ .event-name:hover{
+    text-decoration: underline;
+    cursor: pointer;
+ }
