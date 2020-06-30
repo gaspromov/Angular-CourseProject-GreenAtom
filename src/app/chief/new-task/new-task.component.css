@@ -1,0 +1,10 @@
+form{
+    display: grid;
+}
+
+.noModal{
+    width: 400px;
+    justify-items: center;
+    margin-left: auto;
+    margin-right: auto;
+}

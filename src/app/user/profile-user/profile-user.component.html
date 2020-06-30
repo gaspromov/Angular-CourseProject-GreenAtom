@@ -14,10 +14,10 @@
             </div>
             <div class="about">
                 О себе: 
-                <textarea class="form-control" name="about" id="about" cols="50" rows="4" [(ngModel)]="about"></textarea>
-
+                <textarea *ngIf="!input" class="form-control" name="about" id="about" cols="50" rows="4" [(ngModel)]="about"></textarea>
+                <p *ngIf="input">{{user_data.about}}</p>
             </div>
-            <div class="buttons">
+            <div class="buttons" *ngIf="!input">
                 <button class="btn btn-sm btn-outline-success mr-2" (click)="onSave()">Сохранить</button>
                 <button class="btn btn-sm btn-outline-danger" (click)="logout()">Выйти</button>
 

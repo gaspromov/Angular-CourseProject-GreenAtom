@@ -31,6 +31,7 @@ export class FirestoreAuthService {
         profession: res[0].payload.doc.get('profession'),
         about: res[0].payload.doc.get('about'),
         bonuses: res[0].payload.doc.get('bonuses'),
+        status: res[0].payload.doc.get('status'),
     }
     return userData;
   }

@@ -21,6 +21,11 @@ import { GiftComponent } from './user/gift/gift.component';
 import { ProfileUserComponent } from './user/profile-user/profile-user.component';
 import { LoginComponent } from './sign/login/login.component';
 import { SignUpComponent } from './sign/sign-up/sign-up.component';
+import { WorkersComponent } from './chief/workers/workers.component';
+import { NewTaskComponent } from './chief/new-task/new-task.component';
+import { ViewUserComponent } from './chief/view-user/view-user.component';
+import { MyTasksComponent } from './worker/my-tasks/my-tasks.component';
+import { NewTasksComponent } from './worker/new-tasks/new-tasks.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +39,12 @@ import { SignUpComponent } from './sign/sign-up/sign-up.component';
     GiftComponent,
     ProfileUserComponent,
     LoginComponent,
-    SignUpComponent
+    SignUpComponent,
+    WorkersComponent,
+    NewTaskComponent,
+    ViewUserComponent,
+    MyTasksComponent,
+    NewTasksComponent
   ],
   imports: [
     BrowserModule,

@@ -89,3 +89,29 @@ app-events{
     
 }
 
+
+app-workers .profile-modal .modal-content{
+    padding: 0px;
+}
+
+app-workers .profile-modal .modal-content .content{
+    width: 100% !important;
+    margin: 0px;
+    justify-items: center !important;
+}
+
+app-workers .profile-modal .modal-content h4{
+    text-align: end;
+}
+
+app-workers .profile-modal .modal-content .card{
+    margin: 0px;
+    width: 100% !important;
+    box-shadow: none !important;
+    border: none !important;
+}
+
+app-workers .newTask-modal .modal-content{
+    padding: 20px;
+
+}

@@ -1,0 +1,19 @@
+<div class="content" *ngIf="tasks">
+    <div class="row" *ngFor="let task of tasks">
+        <div class="col">
+            <div class="card mb-3 p-2 justify-content-start" style="min-height: 80px">
+                Название: {{ task.name }} <br>
+                Описание: {{ task.descript }} <br>
+                Выполнить до: {{ task.date }} <br>
+                Награда: {{ task.bonuses }}f <br>
+                <div *ngIf="task.status == 'inProcess'">
+                    <button class="btn btn-outline-success mr-2" (click)="performe(task.id, task.bonuses)">Выполнено</button>
+                    <button class="btn btn-outline-danger" (click)="cancel(task.id)">Отказаться</button>
+                </div>
+                <div *ngIf="task.status == 'performed'">
+                    <p class="text-success">Молодец! Ты выполнил задание</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

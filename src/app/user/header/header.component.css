@@ -21,6 +21,11 @@ nav ul{
 
 .link{
     color: black;
+    cursor: pointer;
+}
+
+.logout:hover{
+    text-decoration: underline;
 }
 
 .header-link img{

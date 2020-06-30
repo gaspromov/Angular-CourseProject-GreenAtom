@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { FireAuthService } from 'src/app/shared/services/auth/fire-auth.service';
 import { Router } from '@angular/router';
 import { FirestoreAuthService } from 'src/app/shared/services/auth/firestore-auth.service';
@@ -9,9 +9,8 @@ import { FirestoreAuthService } from 'src/app/shared/services/auth/firestore-aut
   styleUrls: ['./profile-user.component.css']
 })
 export class ProfileUserComponent implements OnInit {
-  user_data: {
-    uid: string, name: string, surname: string, phone: string, email: string, about: string, profession: string, bonuses: string
-  };
+  @Input() user_data: any = {};
+  @Input() input: boolean = false;
   about: string;
   confirm = false;
 
@@ -22,11 +21,14 @@ export class ProfileUserComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.user_data = JSON.parse(localStorage.getItem('userData'))
-    console.log(this.user_data.profession)
-    this.about = this.user_data.about;
-    console.log(this.user_data.profession)
+    if (Object.keys(this.user_data).length == 0){
+      this.user_data = JSON.parse(localStorage.getItem('userData'))
+      console.log(this.user_data.profession)
+      this.about = this.user_data.about;
+    }
   }
+
+  
 
   logout(){
     this.auth.SignOut();

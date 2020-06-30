@@ -1,0 +1,48 @@
+<h6>Работники</h6>
+<div class="content users" *ngIf="users">
+    <div class="row" *ngFor="let user of users">
+        <div class="col" *ngIf = "user.status != 'admin'">
+            <div class="card mb-3 p-2 justify-content-start" style="min-height: 80px">
+                <span class="login link" data-toggle="modal" data-target=".profile-modal" (click)="modal(user.uid, '1')">
+                     Имя и фамилия: {{ user.name }} {{ user.surname }}<br>
+                </span>
+                Должность: {{ user.profession }} <br>
+                E-mail: {{ user.email }} <br>
+                Бонусы: {{ user.bonuses }}f <br>
+                <div>
+                    <input *ngIf="idAddB == user.uid" type="text" class="mr-2" id="" [(ngModel)]="add_bonuses"> 
+                    <button class="btn btn-outline-warning mr-4" (click)="giveBonuses(user.uid, user.bonuses)">Подарить бонусы</button> 
+                    <button class="btn btn-outline-success" data-toggle="modal" data-target=".newTask-modal" (click)="modal(user.uid, '2')">Дать задание</button>
+                </div>
+                <div *ngIf="user.uid == modalProfileId" class="modal fade profile-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-xmd">
+                      <div class="modal-content">
+                  
+                        <!-- Компонент "вход" -->
+                        <app-profile-user [user_data]="user" [input]="input"></app-profile-user>
+                        <!-- . -->
+                  
+                      </div>
+                    </div>
+                </div>
+                
+                <div *ngIf="user.uid == modalNewTaskId" class="modal fade newTask-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-xmd">
+                      <div class="modal-content">
+                  
+                        <!-- Компонент "вход" -->
+                        <app-new-task [uid]="user.uid" [title]="user.name+' '+user.surname"></app-new-task>
+                        <!-- . -->
+                  
+                      </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="!users" class="content users">
+    <h5 class="text-center">Работников еще нет</h5>
+</div>

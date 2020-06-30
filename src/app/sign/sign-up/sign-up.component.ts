@@ -28,7 +28,8 @@ export class SignUpComponent implements OnInit {
       about: new FormControl({ value: '', disabled: disabled }, [Validators.required]),
       email: new FormControl({ value: '', disabled: disabled }, [Validators.required]),
       password: new FormControl({ value: '', disabled: disabled }, [Validators.required]),
-      bonuses: new FormControl({ value: 200, disabled: disabled })
+      bonuses: new FormControl({ value: 200, disabled: disabled }),
+      status: new FormControl({ value: 'worker', disabled: disabled })
     })
   }
 

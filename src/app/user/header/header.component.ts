@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { FireAuthService } from 'src/app/shared/services/auth/fire-auth.service';
 
 @Component({
   selector: 'app-header',
@@ -10,12 +11,19 @@ export class HeaderComponent implements OnInit {
     name: string, surname: string, bonuses:string,
   }
 
-  @Input() isAuth: boolean;
+  @Input() isAuth: string;
 
-  constructor() { }
+  constructor(
+    public auth: FireAuthService
+  ) { }
 
   ngOnInit(): void {
     this.user_data = JSON.parse(localStorage.getItem('userData'));
+  }
+
+  signOut(){
+    this.auth.SignOut();
+    window.location.reload();
   }
 
 }

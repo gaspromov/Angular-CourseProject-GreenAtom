@@ -1,0 +1,11 @@
+
+<h6 class="text-center" *ngIf="title != ''">Задание для {{ title }}</h6>
+<h6 class="" *ngIf="title == ''">Задание для всех</h6>
+<form action="" class="addingTask" [formGroup]="formAdd" (ngSubmit)="onAddTask()" [ngClass]="{noModal: (title == '')}">
+    <div class="alert alert-success mb-2" *ngIf="confirm">Задача добавлена!</div>
+    <label for="name-task" class="mb-0">Название</label><input type="text" formControlName="name" class="form-control mb-1" id="name-task">
+    <label for="descript" class="mb-0">Описание</label><input type="text" formControlName="descript" class="form-control mb-1" id="descript">
+    <label for="date" class="mb-0">Выполнить до</label><input type="date" formControlName="date" class="form-control mb-1" id="date">
+    <label for="bonuses" class="mb-0">Бонусы</label><input type="text" formControlName="bonuses" class="form-control mb-1" id="bonuses">
+    <input type="submit" value="Добавить" class="btn btn-outline-success" [disabled]="formAdd.invalid">
+</form>

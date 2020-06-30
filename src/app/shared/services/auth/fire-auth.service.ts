@@ -105,7 +105,7 @@ export class FireAuthService {
     return this.afAuth.signOut().then(() => {
       localStorage.removeItem('user');
       localStorage.removeItem('userData');
-      this.router.navigate(['unsign/home']);
+      this.router.navigate(['/events']);
     })
   }
 
